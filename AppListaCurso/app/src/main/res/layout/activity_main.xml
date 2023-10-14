@@ -81,9 +81,13 @@
         app:layout_constraintTop_toBottomOf="@+id/editTelefoneContato"
         app:layout_constraintVertical_bias="1.0" />
 
-    <!--        app:layout_constraintStart_toEndOf="@+id/btnLimpar"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/btnLimpar"--><![CDATA[
         app:layout_constraintTop_toBottomOf="@+id/editTelefoneContato"
         app:layout_constraintVertical_bias="1.0" />
+
+
+
+    ]]>
 
     <Button
         android:id="@+id/btnSalvar"
@@ -94,7 +98,11 @@
         android:text="@string/txt_button_salvar"
         android:textAllCaps="true"
         app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnLimpar"
+        app:layout_constraintTop_toBottomOf="@+id/editTelefoneContato"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnFinalizar"

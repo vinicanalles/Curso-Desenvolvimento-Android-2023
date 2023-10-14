@@ -3,6 +3,7 @@ package devandroid.vinicius.applistacurso.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import devandroid.vinicius.applistacurso.R;
 import devandroid.vinicius.applistacurso.model.Pessoa;
@@ -35,22 +36,25 @@ public class MainActivity extends AppCompatActivity {
         outraPessoa.setCursoDesejado("Android");
         outraPessoa.setTelefone("16997646368");
 
-        dadosPessoa = "Primeiro nome: ";
-        dadosPessoa += pessoa.getPrimeiroNome();
-        dadosPessoa += " Sobrenome: ";
-        dadosPessoa += pessoa.getSobrenome();
-        dadosPessoa += " Curso Desejado: ";
-        dadosPessoa += pessoa.getCursoDesejado();
-        dadosPessoa += " Telefone: ";
-        dadosPessoa += pessoa.getTelefone();
+//        dadosPessoa = "Primeiro nome: ";
+//        dadosPessoa += pessoa.getPrimeiroNome();
+//        dadosPessoa += " Sobrenome: ";
+//        dadosPessoa += pessoa.getSobrenome();
+//        dadosPessoa += " Curso Desejado: ";
+//        dadosPessoa += pessoa.getCursoDesejado();
+//        dadosPessoa += " Telefone: ";
+//        dadosPessoa += pessoa.getTelefone();
+//
+//        dadosOutraPessoa = "Primeiro nome: ";
+//        dadosOutraPessoa += outraPessoa.getPrimeiroNome();
+//        dadosOutraPessoa += " Sobrenome: ";
+//        dadosOutraPessoa += outraPessoa.getSobrenome();
+//        dadosOutraPessoa += " Curso Desejado: ";
+//        dadosOutraPessoa += outraPessoa.getCursoDesejado();
+//        dadosOutraPessoa += " Telefone: ";
+//        dadosOutraPessoa += outraPessoa.getTelefone();
 
-        dadosOutraPessoa = "Primeiro nome: ";
-        dadosOutraPessoa += outraPessoa.getPrimeiroNome();
-        dadosOutraPessoa += " Sobrenome: ";
-        dadosOutraPessoa += outraPessoa.getSobrenome();
-        dadosOutraPessoa += " Curso Desejado: ";
-        dadosOutraPessoa += outraPessoa.getCursoDesejado();
-        dadosOutraPessoa += " Telefone: ";
-        dadosOutraPessoa += outraPessoa.getTelefone();
+        Log.i("POOAndroid", "Objeto pessoa: " + pessoa.toString());
+        Log.i("POOAndroid", "Objeto outraPessoa: " + outraPessoa.toString());
     }
 }
