@@ -1,13 +1,12 @@
 package devandroid.vinicius.applistacurso.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import devandroid.vinicius.applistacurso.R;
 import devandroid.vinicius.applistacurso.model.Pessoa;
@@ -17,9 +16,6 @@ public class MainActivity extends AppCompatActivity {
     Pessoa pessoa;
 
     Pessoa outraPessoa;
-
-    String dadosPessoa;
-    String dadosOutraPessoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +33,6 @@ public class MainActivity extends AppCompatActivity {
         Button btnLimpar;
         Button btnSalvar;
         Button btnFinalizar;
-
-        // Atribuir conteúdo, dados, valores para o Objeto
-//        pessoa.setPrimeiroNome("Vinicius");
-//        pessoa.setSobrenome("Canalles");
-//        pessoa.setCursoDesejado("Android");
-//        pessoa.setTelefone("16997711804");
 
         outraPessoa.setPrimeiroNome("Renan");
         outraPessoa.setSobrenome("Canalles");
