@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import devandroid.vinicius.applistacurso.R;
 import devandroid.vinicius.applistacurso.model.Pessoa;
@@ -37,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
         Button btnFinalizar;
 
         // Atribuir conteúdo, dados, valores para o Objeto
-        pessoa.setPrimeiroNome("Vinicius");
-        pessoa.setSobrenome("Canalles");
-        pessoa.setCursoDesejado("Android");
-        pessoa.setTelefone("16997711804");
+//        pessoa.setPrimeiroNome("Vinicius");
+//        pessoa.setSobrenome("Canalles");
+//        pessoa.setCursoDesejado("Android");
+//        pessoa.setTelefone("16997711804");
 
         outraPessoa.setPrimeiroNome("Renan");
         outraPessoa.setSobrenome("Canalles");
@@ -60,6 +62,27 @@ public class MainActivity extends AppCompatActivity {
         editSobrenome.setText(outraPessoa.getSobrenome());
         editNomeCurso.setText(outraPessoa.getCursoDesejado());
         editTelefoneContato.setText(outraPessoa.getTelefone());
+
+        btnLimpar.setOnClickListener(view -> {
+            editPrimeiroNome.setText("");
+            editSobrenome.setText("");
+            editNomeCurso.setText("");
+            editTelefoneContato.setText("");
+        });
+
+        btnFinalizar.setOnClickListener(view -> {
+            Toast.makeText(this, "Volte sempre!", Toast.LENGTH_SHORT).show();
+            finish();
+        });
+
+        btnSalvar.setOnClickListener(view -> {
+            pessoa.setPrimeiroNome(editPrimeiroNome.getText().toString());
+            pessoa.setSobrenome(editSobrenome.getText().toString());
+            pessoa.setTelefone(editTelefoneContato.getText().toString());
+            pessoa.setCursoDesejado(editNomeCurso.getText().toString());
+
+            Toast.makeText(this, "Salvo " + pessoa.toString(), Toast.LENGTH_SHORT).show();
+        });
 
         Log.i("POOAndroid", "Objeto pessoa: " + pessoa.toString());
         Log.i("POOAndroid", "Objeto outraPessoa: " + outraPessoa.toString());
