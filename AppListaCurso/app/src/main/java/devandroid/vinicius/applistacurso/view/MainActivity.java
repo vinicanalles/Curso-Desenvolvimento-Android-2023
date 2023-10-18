@@ -9,9 +9,12 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import devandroid.vinicius.applistacurso.R;
+import devandroid.vinicius.applistacurso.controller.PessoaController;
 import devandroid.vinicius.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
+
+    PessoaController controller;
 
     Pessoa pessoa;
 
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        controller = new PessoaController();
         pessoa = new Pessoa();
         outraPessoa = new Pessoa();
 
@@ -72,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
             pessoa.setCursoDesejado(editNomeCurso.getText().toString());
 
             Toast.makeText(this, "Salvo " + pessoa.toString(), Toast.LENGTH_SHORT).show();
+
+            controller.salvar(pessoa);
         });
 
         Log.i("POOAndroid", "Objeto pessoa: " + pessoa.toString());
