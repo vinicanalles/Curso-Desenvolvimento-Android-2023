@@ -31,11 +31,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         preferences = getSharedPreferences(NOME_PREFERENCES, 0);
-        SharedPreferences.Editor listaVip = preferences.edit();
+        SharedPreferences.Editor listaVip = preferences.edit(); // Usado para salvar os atributos no shared preferences
 
         controller = new PessoaController();
         pessoa = new Pessoa();
-        outraPessoa = new Pessoa();
+
+        pessoa.setPrimeiroNome(preferences.getString("primeiroNome", ""));
+        pessoa.setSobrenome(preferences.getString("sobrenome", ""));
+        pessoa.setCursoDesejado(preferences.getString("nomeCurso", ""));
+        pessoa.setTelefone(preferences.getString("telefoneContato", ""));
 
         EditText editPrimeiroNome;
         EditText editSobrenome;
@@ -46,24 +50,19 @@ public class MainActivity extends AppCompatActivity {
         Button btnSalvar;
         Button btnFinalizar;
 
-        outraPessoa.setPrimeiroNome("Renan");
-        outraPessoa.setSobrenome("Canalles");
-        outraPessoa.setCursoDesejado("Android");
-        outraPessoa.setTelefone("16997646368");
-
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
         editSobrenome = findViewById(R.id.editSobrenome);
         editNomeCurso = findViewById(R.id.editNomeCurso);
         editTelefoneContato = findViewById(R.id.editTelefoneContato);
 
+        editPrimeiroNome.setText(pessoa.getPrimeiroNome());
+        editSobrenome.setText(pessoa.getSobrenome());
+        editNomeCurso.setText(pessoa.getCursoDesejado());
+        editTelefoneContato.setText(pessoa.getTelefone());
+
         btnSalvar = findViewById(R.id.btnSalvar);
         btnLimpar = findViewById(R.id.btnLimpar);
         btnFinalizar = findViewById(R.id.btnFinalizar);
-
-        editPrimeiroNome.setText(outraPessoa.getPrimeiroNome());
-        editSobrenome.setText(outraPessoa.getSobrenome());
-        editNomeCurso.setText(outraPessoa.getCursoDesejado());
-        editTelefoneContato.setText(outraPessoa.getTelefone());
 
         btnLimpar.setOnClickListener(view -> {
             editPrimeiroNome.setText("");
@@ -95,6 +94,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Log.i("POOAndroid", "Objeto pessoa: " + pessoa.toString());
-        Log.i("POOAndroid", "Objeto outraPessoa: " + outraPessoa.toString());
     }
 }
